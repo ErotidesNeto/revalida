@@ -1,0 +1,13 @@
+langchain
+langchain-anthropic
+langchain-community
+langchain-core
+python-dotenv
+pypdf
+docx
+python-docx
+streamlit
+anthropic
+langchain-openai
+pypdf2
+
