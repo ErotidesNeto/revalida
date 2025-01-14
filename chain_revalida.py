@@ -23,7 +23,7 @@ def revalida(file_path_peticao_inicial):
             "nome_autoridade_coatora": "Nome da autoridade que a petição indica como sendo a coatora",
             "cargo_autoridade_coatora": "cargo da autoridade que a petição indica como sendo a coatora",
             "edital_UEPA": "Número do edital da UEPA referido na petição inicial que rege o processo de Revalidação de Diplomas de graduação do Curso de Medicina, expedidos por Universidades Estrangeiras. Por exemplo, Edital 35/2022-UEPA", Se não houver, retorne None
-            "kelly_guedes": True/False, # Verifique se o advogado da petição inicial se chama Kelly Guedes, se sim, retorne True, se não, retorne False
+            "kelly_guedes": true/false, # Verifique se o advogado da petição inicial se chama Kelly Guedes, se sim, retorne true, se não, retorne false
         
 
         """
@@ -48,12 +48,12 @@ def revalida(file_path_peticao_inicial):
 
     chain=prompt_template|llm|StrOutputParser()
 
-    #verificar se o arquivo é menor que 31 páginas
-    if len(arquivo)<31:
+    #verificar se o arquivo é menor que 41 páginas
+    if len(arquivo)<41:
         resposta_chain=chain.invoke({'peticao_inicial': texto_peticao_inicial})    
         
     else: 
-        raise ValueError ("Erro: o arquivo da petição inicial não pode ter mais que 30 páginas")
+        raise ValueError ("Erro: o arquivo da petição inicial não pode ter mais que 40 páginas")
 
     return json.loads(resposta_chain.replace('```json\n','').replace('\n```',''))
 
